@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 public class ArrayPrettyPrinter {
 
     public static void main(String[] args) {
@@ -33,9 +32,9 @@ public class ArrayPrettyPrinter {
      * @return результат форматирования
      */
     private static String formatArray(String[] strArray) {
-        String string = "";
+        StringBuilder string = new StringBuilder();
         if (strArray.length == 0 || Arrays.toString(strArray).equals("")) {
-            return string;
+            return string.toString();
         } else {
             for (int i = 0; i < strArray.length; i++) {
                 if (strArray[i] == null) {
@@ -45,18 +44,18 @@ public class ArrayPrettyPrinter {
                     strArray[i] = "empty";
                 }
                 if (i != 0) {
-                    string = string + " " + strArray[i];
+                    string.append(" ").append(strArray[i]);
                 } else {
-                    string = string + strArray[i];
+                    string.append(strArray[i]);
                 }
                 if (i == strArray.length - 1) {
-                    string = string + "!";
+                    string.append("!");
                 }
             }
 
-            string = string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+            string = new StringBuilder(string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase());
 
         }
-        return string;
+        return string.toString();
     }
 }

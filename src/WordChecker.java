@@ -4,6 +4,7 @@ import java.util.Arrays;
  */
 public abstract class WordChecker {
 
+
     public static void main(String[] args) {
         taskChecker("som", "mos", true);
         taskChecker("Макс", "Сом", false);
